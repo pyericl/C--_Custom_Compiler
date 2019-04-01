@@ -1,0 +1,151 @@
+int a;
+bool globalBool;
+void func2 (){
+    cout <<"inside func2";
+    cout << "\n";
+}
+
+void func1(){
+    cout <<"inside func1, not in func2 yet";
+    cout << "\n";
+    func2();
+}
+void TestArithmitic(){
+ int i1; int i2;int i3; int i4;
+ bool b1;  bool b2;  bool b3;  bool b4;
+// testing int assignment
+i1 = 1; i2 = 2; i3 = -10; i4=15;
+  cout << i1; // = 1
+  cout << "\n";
+  cout << i2; // = 2
+  cout << "\n";
+// Arithmetic operator testing
+ i1=1+i1;  i2=i2*2;
+
+  cout << i1; // = 2
+  cout << "\n";
+  cout << i2; // = 4
+  cout << "\n";
+  i2= i2 - i1;
+  cout << i2; // = 2
+  cout << "\n";
+  cout << i3; // = -10
+  cout << "\n";
+  i3 = i3+i4;
+  cout << i3; // = 5
+  cout << "\n";
+  i4++;
+  cout << i4; // = 16
+  cout << "\n";  
+// testing bool assignment
+  b1 = false; b2 = false; b3 = false; b4 = false;
+  // Relational operator 
+  b1=i1>i2;  b2=i1>=i2;  b3=i3<1;  b4=i3<=1;
+  cout << b1; // = false 0
+  cout << "\n";
+  cout << b2; // = true 1
+  cout << "\n";
+  cout << b3; // = false 0
+  cout << "\n";
+  cout << b4; // = false 0
+  cout << "\n";
+  // Logical operator
+  b1=b1&&b2;  b2=b1||b4;  b3 = !b4;
+  cout << b1; // = false 0
+  cout << "\n";
+  cout << b2; // = false 0
+  cout << "\n";
+  cout << b3; // = true
+  cout << "\n";
+
+  // if and if else
+  if(b2 == true){
+  cout << "true in if "; 
+  cout << "\n";
+}
+  if( !(b2 ==true) ){
+  cout << " true in ifelse, unaryNot passed "; 
+  cout << "\n";   
+  }else{
+  cout << "ERROR: false in else  "; 
+  cout << "\n";   
+  }
+}
+
+
+void ultimateTest(int i, bool b){
+    //testing Arithmetic combo
+    int i1;
+    int i2;
+    int i3;
+    bool b1; 
+    bool b2;
+    i2 = 6;
+    i3 = 10;
+    i1 = ((100/5) + 20) *  (i2 - 3);
+    i = i / 2;
+
+    cout << i;     cout << "\n"; //i depends on the param i;
+    cout << i1;    cout << "\n"; //i1 = 120
+    i2 = i1 *2 /2; 
+    cout << i2;    cout << "\n"; //i2 = 120  
+
+    b1 = (false || true) && (false || !(true && true));
+    cout << b1;    cout << "\n"; // b1 = false 
+    b2 = b || b1;
+    cout << b2;    cout << "\n"; // b2 = true
+
+    if(b2){
+        if(!b1 == false){
+            b1 = true;
+            cout << "ERROR in if";            
+        }
+        else {
+            while((i <= 10) && (i1 >= 100) && (i2 != 100) && (i2 < 1000) && (i1 >50) ){
+                i++;
+                cout << "this is ++"; cout << i; cout << "\n";
+                i3--;
+                cout << "this is --"; cout << i3; cout << "\n";
+            }
+            cout << "end of while in if";
+            cout << "\n";
+        
+        }
+        cout << "end of ifElse";
+        cout << "\n";
+    }
+
+    if(b2 && (70-1) <=(100) && true ){
+    cout << "true in interesting test";
+    cout << "\n";
+    }
+
+
+}
+
+// MAIN //////////////////////////////////
+void main(){
+    a = 10;
+    globalBool = true;
+    ultimateTest(6, true);
+    func2 ();
+    func1();
+    cout << "testing Arithmitic!!!!!!!!!!!!!!";
+    cout << "\n";
+    TestArithmitic();
+    cout << "End of Arithmitic()!!!!!!!!!!!";
+    cout << "\n";
+    while (globalBool && a <20){
+        cout << "enter 0 to stop or it will goes to 20"; cout << "\n";
+        cin >> globalBool; cout << "\n";
+        cout << a; cout << "\n";
+        a++;
+
+    }
+    cout << "End of while loop";
+
+
+}
+
+
+
